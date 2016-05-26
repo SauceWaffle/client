@@ -4,15 +4,16 @@ import {connect} from 'react-redux';
 import * as actionCreators from '../action_creators';
 import classNames from 'classnames'
 
+import {GolferRoundsContainer} from './golferrounds'
+
 export const Manage = React.createClass({
   mixins: [PureRenderMixin],
   getGolfers: function() {
     return this.props.golfers || [];
   },
-  editGolferRounds: function() {
-    return false;
-  },
   render: function() {
+    var currentGolfer;
+
     return <div className="management">
         <table className="managegolfers">
         <tbody>
@@ -54,7 +55,7 @@ export const Manage = React.createClass({
             <td><input type="text" ref={golfer.get('_id')+"_my_color"} className="golferinputs"
                   onChange={(ele) => this.props.sendGolferInfo(golfer.get('_id'), 'my_color', ele.currentTarget.value)}
                   placeholder={golfer.get('my_color')} /></td>
-            <td><button className="golferrounds" onClick={this.editGolferRounds(golfer.get('_id)'))}>Rounds</button></td>
+            <td><button className="golferrounds" onClick={() => this.props.setCurrentGolfer(golfer.get('_id'))}>Rounds</button></td>
           </tr>
         )}
         </tbody>
@@ -70,6 +71,14 @@ export const Manage = React.createClass({
 
         </form>
 
+
+
+
+        <GolferRoundsContainer golfer_id={this.props.currentGolfer} />
+
+
+
+
       </div>;
   }
 });
@@ -84,7 +93,8 @@ function mapStateToProps(state) {
     round_id:     state.get('currentRound'),
     round:        state.getIn(['round_data', 'round_'+state.get('currentRound')]),
     golfers:      state.get('golfers'),
-    holes:        state.get('holes')
+    holes:        state.get('holes'),
+    currentGolfer: state.get('currentManageGolfer')
   }
 }
 

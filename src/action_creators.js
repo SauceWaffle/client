@@ -20,10 +20,27 @@ export function setState(state) {
   };
 }
 
+export function setCurrentGolfer(golfer_id) {
+  return {
+    type: 'SET_CURRENT_GOLFER',
+    golfer_id
+  };
+}
 
 
 
 
+
+
+
+
+export function getManageGolferRounds(golfer_id) {
+  return {
+    meta: {remote: true},
+    type: 'GET_MANAGE_GOLFER_ROUNDS',
+    golfer_id
+  };
+}
 
 
 

@@ -1,4 +1,5 @@
 import {List, Map} from 'immutable';
+import {getManageGolferRounds} from './action_creators';
 
 function setConnectionState(state, connectionState, connected) {
   return state.set('connection', Map({
@@ -10,6 +11,18 @@ function setConnectionState(state, connectionState, connected) {
 function setState(state, newState) {
   return state.merge(newState);
 }
+
+function setCurrentGolfer(state, golfer_id) {
+  getManageGolferRounds(golfer_id);
+  return state.set('currentManageGolfer', golfer_id);
+}
+
+
+
+
+
+
+
 
 function getMyVotes(state, votes) {
   if (votes) {
@@ -70,6 +83,8 @@ export default function(state = Map(), action) {
     return setConnectionState(state, action.state, action.connected);
   case 'SET_STATE':
     return resetVote(setState(state, action.state));
+  case 'SET_CURRENT_GOLFER':
+    return setCurrentGolfer(state, action.golfer_id);
   case 'GET_MY_VOTES':
     return getMyVotes(state, action.state.vote.votes);
   case 'VOTE':
