@@ -146,16 +146,20 @@ body {
    color: transparent;
 }
 
-.golferinputs:-moz-placeholder { /* Firefox 18- */
-   color: white;
-}
-
 .golferinputs::-moz-placeholder {  /* Firefox 19+ */
    color: white;
 }
 
+.golferinputs:focus::-moz-placeholder {  /* Firefox 19+ */
+   color: transparent;
+}
+
 .golferinputs:-ms-input-placeholder {
    color: white;
+}
+
+.golferinputs:focus:-ms-input-placeholder {
+   color: transparent;
 }
 
 
