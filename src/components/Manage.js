@@ -9,6 +9,9 @@ export const Manage = React.createClass({
   getGolfers: function() {
     return this.props.golfers || [];
   },
+  editGolferRounds: function() {
+    return false;
+  },
   render: function() {
     return <div className="management">
         <table className="managegolfers">
@@ -22,6 +25,7 @@ export const Manage = React.createClass({
           <th>ROUNDS ON BACK</th>
           <th>TOTAL BACK SCORE</th>
           <th>MESSAGE BOARD COLOR</th>
+          <th></th>
         </tr>
 
         {this.getGolfers().map(golfer =>
@@ -50,6 +54,7 @@ export const Manage = React.createClass({
             <td><input type="text" ref={golfer.get('_id')+"_my_color"} className="golferinputs"
                   onChange={(ele) => this.props.sendGolferInfo(golfer.get('_id'), 'my_color', ele.currentTarget.value)}
                   placeholder={golfer.get('my_color')} /></td>
+            <td><button className="golferrounds" onClick={this.editGolferRounds(golfer.get('_id)'))}>Rounds</button></td>
           </tr>
         )}
         </tbody>

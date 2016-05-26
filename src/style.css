@@ -146,18 +146,27 @@ body {
    color: transparent;
 }
 
-.golferinputs:-moz-placeholder { /* Firefox 18- */
+.golferinputs::-moz-placeholder { /* Firefox 18- */
    color: white;
 }
 
-.golferinputs::-moz-placeholder {  /* Firefox 19+ */
-   color: white;
+.golferinputs:focus::-moz-placeholder {  /* Firefox 19+ */
+   color: transparent;
 }
 
 .golferinputs:-ms-input-placeholder {
    color: white;
 }
 
+.golferinputs:focus:-ms-input-placeholder {
+   color: transparent;
+}
+
+.golferrounds {
+  background-color: transparent;
+  color: white;
+  border: 1px solid red;
+}
 
 .addnewgolfer {
   position: relative;
