@@ -1,0 +1,337 @@
+body {
+  font-family: verdana;
+  background-color: #333;
+  color: white;
+}
+
+.messageboardarea {
+  position: fixed;
+  float: left;
+  width: 100%;
+  height: 100%;
+  margin: 10px 0px 20px 0px;
+  overflow-y: auto;
+}
+
+
+.messagelineone {
+  margin-left: 5px;
+}
+
+
+.messagelinetwo {
+  margin-left: 15px;
+}
+
+
+.messageheader {
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 12pt;
+}
+
+
+.messagedate {
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 8pt;
+}
+
+
+.messagetext {
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 10pt;
+  color: #DDD;
+}
+
+
+
+
+
+
+.scorecardarea {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+.scorecard table {
+  position: fixed;
+  border-collapse: collapse;
+  border: 2px solid white;
+}
+
+.scorecard td {
+  text-align: center;
+  border: 2px solid white;
+}
+
+.scorecard .hole {
+  width: 30px;
+}
+
+.scorecard .names {
+  width: 75px;
+}
+
+.scorecard .totals {
+  width: 75px;
+}
+
+.scorebox {
+  position: relative;
+  background-color: transparent;
+  text-align: center;
+  border: none;
+  color: white;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+.leaderboardarea {
+  position: fixed;
+  top: 70%;
+}
+
+
+
+
+
+
+.voteentry {
+  font-size: 18pt;
+}
+
+/* Voting Screen */
+.votescreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+.surface {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.hills {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.distance {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+
+.voting {
+  position: relative;
+  height: 40%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: row;
+
+  user-select: none;
+}
+
+
+.voting button {
+  flex: 3 0 0;
+
+  background-color: #BBB;
+  border: 1px solid white;
+}
+
+.voting .voteheader {
+  flex: 1 0 0;
+  background: #66A;
+  color: white;
+}
+.voting button:active {
+  background-color: white;
+  color: #999;
+}
+.voting button.voted {
+  background-color: #999;
+}
+.voting button:not(.voted) .label {
+  visibility: hidden;
+}
+.voting button .label {
+  opacity: 0.87;
+}
+.voting button.votedAgainst * {
+  opacity: 0.3;
+}
+
+@media only screen and (min-device-width: 500px) {
+  .voting {
+    flex-direction: row;
+  }
+}
+
+/* Results Screen */
+
+
+
+.resetmyvote {
+  position: relative;
+  height: 40px;
+  width: 100%;
+  background: #88E;
+  color: white;
+  font-size: 16pt;
+  border: 1px solid white;
+  border-top: 3px solid white;
+}
+
+
+.results {
+  position: relative;
+  height: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.surfresults {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    border: 1px solid white;
+    border-top: 3px solid white;
+}
+
+.hillresults {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    border: 1px solid white;
+    border-top: 3px solid white;
+}
+
+.distresults {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    border: 1px solid white;
+    border-top: 3px solid white;
+}
+
+.tally {
+  flex: 1 0 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.tally .entry {
+  flex: 1 0 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tally .voteentry {
+  width: 25%;
+}
+.tally .voteVisualization {
+  height: 36px;
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.surfresults .voteVisualization {
+    background-color: #705BAF;
+}
+
+.hillresults .voteVisualization {
+    background-color: #B19BFF;
+}
+
+.distresults .voteVisualization {
+    background-color: #A384FF;
+}
+
+.tally .votesBlock {
+  background-color: white;
+  transition: width 0.5s;
+}
+.tally .voteCount {
+  font-size: 2rem;
+}
+
+.results .management {
+  display: flex;
+
+  height: 2em;
+  border-top: 1px solid #aaa;
+}
+
+.results .management button {
+  border: 0;
+  background-color: black;
+  color: #aaa;
+}
+.results .management .next {
+  flex: 1;
+}
+
+/* Winner View */
+
+.winner {
+  font-size: 4rem;
+  text-align: center;
+}
+
+/* Connection State */
+
+.connectionState {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  padding: 5px;
+
+  text-align: center;
+
+  background-color: #B71C1C;
+}
