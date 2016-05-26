@@ -146,7 +146,7 @@ body {
    color: transparent;
 }
 
-.golferinputs::-moz-placeholder { /* Firefox 18- */
+.golferinputs::-moz-placeholder {  /* Firefox 19+ */
    color: white;
 }
 
@@ -161,6 +161,7 @@ body {
 .golferinputs:focus:-ms-input-placeholder {
    color: transparent;
 }
+
 
 .golferrounds {
   background-color: transparent;
