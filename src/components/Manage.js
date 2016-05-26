@@ -2,32 +2,84 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {connect} from 'react-redux';
 import * as actionCreators from '../action_creators';
+import classNames from 'classnames'
 
 export const Manage = React.createClass({
   mixins: [PureRenderMixin],
+  getGolfers: function() {
+    return this.props.golfers || [];
+  },
   render: function() {
     return <div className="management">
-          <button ref="restart"
-                  onClick={this.props.restart}>
-            Restart
-          </button>
+        <table className="managegolfers">
+        <tbody>
+        <tr>
+          <th>NAME</th>
+          <th>PLACE</th>
+          <th>HANDICAP</th>
+          <th>ROUNDS ON FRONT</th>
+          <th>TOTAL FRONT SCORE</th>
+          <th>ROUNDS ON BACK</th>
+          <th>TOTAL BACK SCORE</th>
+          <th>MESSAGE BOARD COLOR</th>
+        </tr>
 
-          <div>
+        {this.getGolfers().map(golfer =>
+          <tr key={golfer.get('_id')}>
+            <td><input type="text" ref={golfer.get('_id')+"_name"} className="golferinputs"
+                  onChange={(ele) => this.props.sendGolferInfo(golfer.get('_id'), 'name', ele.currentTarget.value)}
+                  placeholder={golfer.get('name')} /></td>
+            <td><input type="text" ref={golfer.get('_id')+"_place"} className="golferinputs"
+                  onChange={(ele) => this.props.sendGolferInfo(golfer.get('_id'), 'place', ele.currentTarget.value)}
+                  placeholder={golfer.get('place')} /></td>
+            <td><input type="text" ref={golfer.get('_id')+"_handicap"} className="golferinputs"
+                  onChange={(ele) => this.props.sendGolferInfo(golfer.get('_id'), 'handicap', ele.currentTarget.value)}
+                  placeholder={golfer.get('handicap')} /></td>
+            <td><input type="text" ref={golfer.get('_id')+"_frontrounds"} className="golferinputs"
+                  onChange={(ele) => this.props.sendGolferInfo(golfer.get('_id'), 'frontrounds', ele.currentTarget.value)}
+                  placeholder={golfer.get('frontrounds')} /></td>
+            <td><input type="text" ref={golfer.get('_id')+"_frontscore"} className="golferinputs"
+                  onChange={(ele) => this.props.sendGolferInfo(golfer.get('_id'), 'frontscore', ele.currentTarget.value)}
+                  placeholder={golfer.get('frontscore')} /></td>
+            <td><input type="text" ref={golfer.get('_id')+"_backrounds"} className="golferinputs"
+                  onChange={(ele) => this.props.sendGolferInfo(golfer.get('_id'), 'backrounds', ele.currentTarget.value)}
+                  placeholder={golfer.get('backrounds')} /></td>
+            <td><input type="text" ref={golfer.get('_id')+"_backscore"} className="golferinputs"
+                  onChange={(ele) => this.props.sendGolferInfo(golfer.get('_id'), 'backscore', ele.currentTarget.value)}
+                  placeholder={golfer.get('backscore')} /></td>
+            <td><input type="text" ref={golfer.get('_id')+"_my_color"} className="golferinputs"
+                  onChange={(ele) => this.props.sendGolferInfo(golfer.get('_id'), 'my_color', ele.currentTarget.value)}
+                  placeholder={golfer.get('my_color')} /></td>
+          </tr>
+        )}
+        </tbody>
+        </table>
 
-          <pre>
-            redux state = { JSON.stringify(this.props.reduxState, null, 2) }
-          </pre>
-          </div>
-        </div>;
+
+        <form onSubmit={e => {
+            e.preventDefault()
+            this.props.addNewGolfer()
+        }} className="addnewgolfer">
+
+        <button type="submit" >Add a New Golfer</button>
+
+        </form>
+
+      </div>;
   }
 });
 
 function mapStateToProps(state) {
   return {
-    pair: state.getIn(['vote', 'pair']),
-    tally: state.getIn(['vote', 'tally']),
-    winner: state.get('winner'),
-    reduxState: state
+    client_id:    state.getIn(['clientId', '_id']),
+    whoAmI:       state.getIn(['clients', state.getIn(['clientId', '_id']), '_id']),
+    whoAmI_id:    state.getIn(['clients', state.getIn(['clientId', '_id']), 'golfer_id']),
+    whoAmI_name:  state.getIn(['clients', state.getIn(['clientId', '_id']), 'golfer_name']),
+    whoAmI_color: state.getIn(['clients', state.getIn(['clientId', '_id']), 'my_color']),
+    round_id:     state.get('currentRound'),
+    round:        state.getIn(['round_data', 'round_'+state.get('currentRound')]),
+    golfers:      state.get('golfers'),
+    holes:        state.get('holes')
   }
 }
 

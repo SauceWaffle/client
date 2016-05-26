@@ -20,6 +20,13 @@ export function setState(state) {
   };
 }
 
+
+
+
+
+
+
+
 export function getAppRegistration(client_id) {
   return {
     meta: {remote: true},
@@ -27,6 +34,42 @@ export function getAppRegistration(client_id) {
     client_id
   };
 }
+
+export function registerTo(client_id, golfer_id) {
+  return {
+    meta: {remote: true},
+    type: 'REGISTER_TO_GOLFER',
+    client_id,
+    golfer_id
+  };
+}
+
+
+
+
+
+export function addNewGolfer() {
+  return {
+    meta: {remote: true},
+    type: 'ADD_NEW_GOLFER'
+  };
+}
+
+
+export function sendGolferInfo(golfer_id, field, value) {
+  return {
+    meta: {remote: true},
+    type: 'SAVE_GOLFER_INFO',
+    golfer_id,
+    field,
+    value
+  };
+}
+
+
+
+
+
 
 export function sendNewMessage(round_id, golfer_id, message) {
   return {
@@ -40,14 +83,8 @@ export function sendNewMessage(round_id, golfer_id, message) {
 
 
 
-export function registerTo(client_id, golfer_id) {
-  return {
-    meta: {remote: true},
-    type: 'REGISTER_TO_GOLFER',
-    client_id,
-    golfer_id
-  };
-}
+
+
 
 export function sendGolferScore(client_id, round_id, golfer_id, hole_id, score) {
   return {
@@ -61,29 +98,15 @@ export function sendGolferScore(client_id, round_id, golfer_id, hole_id, score) 
   };
 }
 
-export function resetMyVote(voter) {
-  return {
-    meta: {remote: true},
-    type: 'RESET_MY_VOTE',
-    voter
-  };
-}
 
-export function vote(group, entry) {
-  return {
-    meta: {remote: true},
-    type: 'VOTE',
-    group,
-    entry
-  };
-}
 
-export function next() {
-  return {
-    meta: {remote: true},
-    type: 'NEXT'
-  };
-}
+
+
+
+
+
+
+
 
 export function restart() {
   return {

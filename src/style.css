@@ -107,6 +107,75 @@ body {
 
 
 
+
+
+
+
+
+
+.management table {
+  position: relative;
+  width: 100%;
+  border-collapse: collapse;
+
+}
+
+.managegolfers th {
+
+}
+
+.managegolfers td {
+  border: 1px solid white;
+}
+
+.managegolfers .golferinputs {
+  position: relative;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  border: none;
+  color: white;
+  font-family: verdana;
+}
+
+.golferinputs::-webkit-input-placeholder {
+   color: white;
+}
+
+.golferinputs:focus::-webkit-input-placeholder {
+   color: transparent;
+}
+
+.golferinputs:-moz-placeholder { /* Firefox 18- */
+   color: white;
+}
+
+.golferinputs::-moz-placeholder {  /* Firefox 19+ */
+   color: white;
+}
+
+.golferinputs:-ms-input-placeholder {
+   color: white;
+}
+
+
+.addnewgolfer {
+  position: relative;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .voteentry {
   font-size: 18pt;
 }
