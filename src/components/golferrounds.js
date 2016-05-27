@@ -49,87 +49,87 @@ export const GolferRounds = React.createClass({
             <tr>
               <td className="names">{round.get('name')}</td>
 
-              <td className="hole"><input type="text" ref={"oneScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 1, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'one_score') : '' } />
+              <td className="hole"><input type="text" ref={"oneScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 1, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('one_score')} />
               </td>
-              <td className="hole"><input type="text" ref={"twoScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 2, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'two_score') : '' } />
+              <td className="hole"><input type="text" ref={"twoScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 2, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('two_score')} />
               </td>
-              <td className="hole"><input type="text" ref={"threeScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 3, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'three_score') : '' } />
+              <td className="hole"><input type="text" ref={"threeScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 3, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('three_score')} />
               </td>
-              <td className="hole"><input type="text" ref={"fourScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 4, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'four_score') : '' } />
+              <td className="hole"><input type="text" ref={"fourScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 4, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('four_score')} />
               </td>
-              <td className="hole"><input type="text" ref={"fiveScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 5, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'five_score') : '' } />
+              <td className="hole"><input type="text" ref={"fiveScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 5, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('five_score')} />
               </td>
-              <td className="hole"><input type="text" ref={"sixScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 6, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'six_score') : '' } />
+              <td className="hole"><input type="text" ref={"sixScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 6, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('six_score')} />
               </td>
-              <td className="hole"><input type="text" ref={"sevenScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 7, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'seven_score') : '' } />
+              <td className="hole"><input type="text" ref={"sevenScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 7, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('seven_score')} />
               </td>
-              <td className="hole"><input type="text" ref={"eightScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 8, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'eight_score') : '' } />
+              <td className="hole"><input type="text" ref={"eightScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 8, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('eight_score')} />
               </td>
-              <td className="hole"><input type="text" ref={"nineScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 9, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'nine_score') : '' } />
+              <td className="hole"><input type="text" ref={"nineScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 9, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('nine_score')} />
               </td>
 
 
-              <td className="totals">{(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'front_score') : '' }</td>
+              <td className="totals">{round.get('front_score')}</td>
 
 
 
-              <td className="hole"><input type="text" ref={"tenScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 10, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'ten_score') : '' } />
+              <td className="hole"><input type="text" ref={"tenScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 10, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('ten_score')} />
               </td>
-              <td className="hole"><input type="text" ref={"elevenScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 11, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'eleven_score') : '' } />
+              <td className="hole"><input type="text" ref={"elevenScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 11, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('eleven_score')} />
               </td>
-              <td className="hole"><input type="text" ref={"twelveScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 12, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'twelve_score') : '' } />
+              <td className="hole"><input type="text" ref={"twelveScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 12, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('twelve_score')} />
               </td>
-              <td className="hole"><input type="text" ref={"thirteenScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 13, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'thirteen_score') : '' } />
+              <td className="hole"><input type="text" ref={"thirteenScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 13, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('thirteen_score')} />
               </td>
-              <td className="hole"><input type="text" ref={"fourteenScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 14, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'fourteen_score') : '' } />
+              <td className="hole"><input type="text" ref={"fourteenScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 14, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('fourteen_score')} />
               </td>
-              <td className="hole"><input type="text" ref={"fifteenScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 15, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'fifteen_score') : '' } />
+              <td className="hole"><input type="text" ref={"fifteenScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 15, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('fifteen_score')} />
               </td>
-              <td className="hole"><input type="text" ref={"sixteenScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 16, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'sixteen_score') : '' } />
+              <td className="hole"><input type="text" ref={"sixteenScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 16, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('sixteen_score')} />
               </td>
-              <td className="hole"><input type="text" ref={"seventeenScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 17, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'seventeen_score') : '' } />
+              <td className="hole"><input type="text" ref={"seventeenScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 17, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('seventeen_score')} />
               </td>
-              <td className="hole"><input type="text" ref={"eighteenScoreBox" + golfer.get('_id')} className="scorebox"
-                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), 18, ele.currentTarget.value)}
-                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'eighteen_score') : '' } />
+              <td className="hole"><input type="text" ref={"eighteenScoreBox" + round.get('round_id')} className="scorebox"
+                    onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 18, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
+                    placeholder={round.get('eighteen_score')} />
               </td>
-              <td className="totals">{(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'back_score') : '' }</td>
-              <td className="totals">{(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'total_score') : '' }</td>
-              <td className="hole">{(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'total_par') : '' }</td>
+              <td className="totals">{round.get('back_score')}</td>
+              <td className="totals">{round.get('total_score')}</td>
+              <td className="hole">{round.get('total_par')}</td>
 
 
             </tr>
@@ -151,7 +151,7 @@ function mapStateToProps(state) {
     whoAmI_name:  state.getIn(['clients', state.getIn(['clientId', '_id']), 'golfer_name']),
     whoAmI_color: state.getIn(['clients', state.getIn(['clientId', '_id']), 'my_color']),
     round_id:     state.get('currentRound'),
-    rounds:        state.get('round_data'),
+    rounds:       state.getIn(['clients', state.getIn(['clientId', '_id']), 'golfermanagerounds']),
     golfers:      state.get('golfers'),
     holes:        state.get('holes')
   };

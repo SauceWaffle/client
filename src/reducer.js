@@ -13,11 +13,12 @@ function setState(state, newState) {
 }
 
 function setCurrentGolfer(state, golfer_id) {
-  getManageGolferRounds(golfer_id);
   return state.set('currentManageGolfer', golfer_id);
 }
 
-
+function setActivePane(state, pane) {
+  return state.set('currentPane', pane);
+}
 
 
 
@@ -85,6 +86,8 @@ export default function(state = Map(), action) {
     return resetVote(setState(state, action.state));
   case 'SET_CURRENT_GOLFER':
     return setCurrentGolfer(state, action.golfer_id);
+  case 'SET_ACTIVE_PANE':
+    return setActivePane(state, action.pane);
   case 'GET_MY_VOTES':
     return getMyVotes(state, action.state.vote.votes);
   case 'VOTE':

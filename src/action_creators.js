@@ -27,6 +27,12 @@ export function setCurrentGolfer(golfer_id) {
   };
 }
 
+export function setActivePane(pane) {
+  return {
+    type: 'SET_ACTIVE_PANE',
+    pane
+  }
+}
 
 
 
@@ -103,7 +109,7 @@ export function sendNewMessage(round_id, golfer_id, message) {
 
 
 
-export function sendGolferScore(client_id, round_id, golfer_id, hole_id, score) {
+export function sendGolferScore(client_id, round_id, golfer_id, hole_id, score, from_where = "scorecard") {
   return {
     meta: {remote: true},
     type: 'SEND_GOLFER_SCORE',
@@ -111,7 +117,8 @@ export function sendGolferScore(client_id, round_id, golfer_id, hole_id, score) 
     round_id,
     golfer_id,
     hole_id,
-    score
+    score,
+    from_where
   };
 }
 

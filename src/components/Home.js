@@ -37,22 +37,46 @@ export const Home = React.createClass({
               </div>
       }
   },
+  isActiveTab: function(tab) {
+    if (this.props.currentPane && tab === this.props.currentPane){
+      return "tab selected";
+    }
+    else { return "tab" }
+  },
+  isActivePane: function(pane) {
+    if (this.props.currentPane && pane === this.props.currentPane){
+      return "active";
+    }
+    else { return "inactive" }
+  },
   render: function() {
     return <div className="homescreen">
-        <div>{this.isRegistered()}</div>
+        <div className="homeheader">
+          <div>{this.isRegistered()}</div>
 
-        <div className="messageboardarea">
-          <MessageBoardContainer />
+          <div className="hometabs">
+            <button className={this.isActiveTab("score")} ref="scoretab" onClick={() => {this.props.setActivePane("score") }}>SCORE CARD</button>
+            <button className={this.isActiveTab("leader")} ref="leadertab" onClick={() => {this.props.setActivePane("leader") }}>LEADER BOARD</button>
+            <button className={this.isActiveTab("message")} ref="messagetab" onClick={() => {this.props.setActivePane("message") }}>MESSAGE BOARD</button>
+          </div>
+
         </div>
 
-        <div className="scorecardarea">
-          <ScoreCardContainer />
-        </div>
+        <div className="viewpane">
 
-        <div className="leaderboardarea">
-          <LeaderboardContainer />
-        </div>
+          <div className={this.isActivePane("score")}>
+            <ScoreCardContainer />
+          </div>
 
+          <div className={this.isActivePane("leader")}>
+            <LeaderboardContainer />
+          </div>
+
+          <div className={this.isActivePane("message")}>
+            <MessageBoardContainer />
+          </div>
+
+        </div>
     </div>
   }
 });
@@ -64,9 +88,8 @@ function mapStateToProps(state) {
     whoAmI_id:    state.getIn(['clients', state.getIn(['clientId', '_id']), 'golfer_id']),
     whoAmI_name:  state.getIn(['clients', state.getIn(['clientId', '_id']), 'golfer_name']),
     round_id:     state.get('currentRound'),
-    golfers:      state.get('golfers')
-
-
+    golfers:      state.get('golfers'),
+    currentPane:  state.get('currentPane')
   };
 }
 

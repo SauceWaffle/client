@@ -50,9 +50,6 @@ export const MessageBoard = React.createClass({
 
       </div>
 
-      <div>whoami_name: {this.props.whoAmI_name}</div>
-      
-
     </div>;
   }
 });

@@ -4,6 +4,93 @@ body {
   color: white;
 }
 
+.homeheader {
+  position: relative;
+  width: 98%;
+  height: 10%;
+  min-height: 75px;
+}
+
+.hometabs .tab {
+  width: 30%;
+  height: 40px;
+  background-color: #8DF;
+  border: none;
+  margin: 0px 2px 0px 2px;
+}
+
+.hometabs .selected {
+  background-color: #7BC;
+}
+
+
+.viewpane {
+  position: absolute;
+	left: 1%;
+	height: 90%;
+  min-height: 500px;
+	width: 98%;
+	overflow: hidden;
+}
+
+.viewpane .active {
+  height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.viewpane .inactive {
+  display: none;
+}
+
+
+.scorecardarea {
+  height: 100%;
+  width: 100%;
+
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  background-color: #555;
+}
+
+.leaderboardarea {
+  height: 724px;
+  width: 500px;
+  background-color: #666;
+
+
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  transform: translateX(100%);
+
+}
+
+.messageboardarea {
+  height: 724px;
+  width: 500px;
+  background-color: #777;
+
+
+  -webkit-transform: translateX(200%);
+  -moz-transform: translateX(200%);
+  transform: translateX(200%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .messageboardarea {
   position: fixed;
   float: left;
