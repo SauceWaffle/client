@@ -47,7 +47,7 @@ export const GolferRounds = React.createClass({
 
           {this.getGolferRounds().map(round =>
             <tr>
-              <td className="names">{round.get('name')}</td>
+              <td className="names">{round.get('round_week')}</td>
 
               <td className="hole"><input type="text" ref={"oneScoreBox" + round.get('round_id')} className="scorebox"
                     onChange={(ele) => { this.props.sendGolferScore(this.props.client_id, round.get('round_id'), golfer.get('_id'), 1, ele.currentTarget.value, "manage"); ele.currentTarget.value = ""; }}
