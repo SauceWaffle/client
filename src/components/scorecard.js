@@ -28,7 +28,7 @@ export const ScoreCard = React.createClass({
     return this.props.surfHasVoted === entry;
   },
   render: function() {
-    return <div className="scorecard leaderboard">
+    return <div className="scorecard">
         Scoring
         <table>
         <tbody>

@@ -6,12 +6,21 @@ body {
 
 .homeheader {
   position: relative;
-  width: 98%;
   height: 10%;
   min-height: 75px;
 }
 
+.hometabs {
+  position: relative;
+  width: 100%;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
 .hometabs .tab {
+  position: relative;
+  float: left;
+  top: 0px;
   width: 30%;
   height: 40px;
   background-color: #8DF;
@@ -29,8 +38,6 @@ body {
 	left: 1%;
 	height: 90%;
   min-height: 500px;
-	width: 98%;
-	overflow: hidden;
 }
 
 .viewpane .active {
@@ -67,16 +74,6 @@ body {
 
 }
 
-.messageboardarea {
-  height: 724px;
-  width: 500px;
-  background-color: #777;
-
-
-  -webkit-transform: translateX(200%);
-  -moz-transform: translateX(200%);
-  transform: translateX(200%);
-}
 
 
 
@@ -90,10 +87,10 @@ body {
 
 
 
-
-.messageboardarea {
+.messageboard {
   position: fixed;
   float: left;
+  min-width: 600px;
   width: 100%;
   height: 100%;
   margin: 10px 0px 20px 0px;
@@ -137,10 +134,11 @@ body {
 
 
 
-.scorecardarea {
+.scorecard {
   position: relative;
   float: left;
   width: 100%;
+  overflow: auto;
 }
 
 .scorecard table {
