@@ -18,7 +18,8 @@ export const Leaderboard = React.createClass({
     return this.props.surfHasVoted === entry;
   },
   render: function() {
-    return <div className="scorecard leaderboard">
+    return <div>
+    <div className="scorecard leaderboard">
       Leaders
         <table>
         <tbody>
@@ -64,7 +65,7 @@ export const Leaderboard = React.createClass({
 
         </tbody>
         </table>
-
+      </div>
     </div>;
   }
 });

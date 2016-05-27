@@ -28,7 +28,8 @@ export const ScoreCard = React.createClass({
     return this.props.surfHasVoted === entry;
   },
   render: function() {
-    return <div className="scorecard">
+    return <div>
+      <div className="scorecard">
         Scoring
         <table>
         <tbody>
@@ -132,7 +133,7 @@ export const ScoreCard = React.createClass({
 
         </tbody>
         </table>
-
+      </div>
     </div>;
   }
 });

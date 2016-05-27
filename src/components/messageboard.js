@@ -16,7 +16,8 @@ export const MessageBoard = React.createClass({
     return this.props.surfHasVoted === entry;
   },
   render: function() {
-    return <div className="messageboard">
+    return <div>
+      <div className="messageboard">
 
 
         {this.getMessages().map(message =>
@@ -49,7 +50,7 @@ export const MessageBoard = React.createClass({
         </form>
 
       </div>
-
+      </div>
     </div>;
   }
 });
