@@ -3,7 +3,7 @@ var autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://0.0.0.0:3001',
+    'webpack-dev-server/client?http://0.0.0.0:80',
     'webpack/hot/only-dev-server',
     './src/index.js'
   ],
