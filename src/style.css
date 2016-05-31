@@ -180,11 +180,34 @@ body {
 
 
 
-.leaderboardarea {
+.leaderboard {
   position: fixed;
-  top: 70%;
+  left: 50%;
+  margin-left: -175px;
 }
 
+.leaderboard table {
+  width: 350px;
+  border-collapse: collapse;
+}
+
+.leaderboard th {
+  text-align: center;
+  border: 2px solid white;
+}
+
+.leaderboard td {
+  text-align: center;
+  border: 2px solid white;
+}
+
+.leadernames {
+  width: 150px;
+}
+
+.leaderdetails {
+  width: 75px;
+}
 
 
 

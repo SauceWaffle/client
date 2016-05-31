@@ -19,52 +19,27 @@ export const Leaderboard = React.createClass({
   },
   render: function() {
     return <div>
-    <div className="scorecard leaderboard">
-      Leaders
-        <table>
-        <tbody>
+      <div className="leaderboard">
+        
+          <table>
+          <tbody>
 
-              <ScoreCardHeaderContainer lineType='holenumbers' />
-              <ScoreCardHeaderContainer lineType='blue' />
-              <ScoreCardHeaderContainer lineType='white' />
-              <ScoreCardHeaderContainer lineType='red' />
-              <ScoreCardHeaderContainer lineType='par' />
-
-
-        {this.getLeaderboardScores().map(golfer =>
           <tr>
-            <td className="names">{golfer.get('name')}</td>
-
-            <td className="hole">{golfer.get('one_score')}</td>
-            <td className="hole">{golfer.get('two_score')}</td>
-            <td className="hole">{golfer.get('three_score')}</td>
-            <td className="hole">{golfer.get('four_score')}</td>
-            <td className="hole">{golfer.get('five_score')}</td>
-            <td className="hole">{golfer.get('six_score')}</td>
-            <td className="hole">{golfer.get('seven_score')}</td>
-            <td className="hole">{golfer.get('eight_score')}</td>
-            <td className="hole">{golfer.get('nine_score')}</td>
-
-            <td className="totals">{golfer.get('front_score')}</td>
-
-            <td className="hole">{golfer.get('ten_score')}</td>
-            <td className="hole">{golfer.get('eleven_score')}</td>
-            <td className="hole">{golfer.get('twelve_score')}</td>
-            <td className="hole">{golfer.get('thirteen_score')}</td>
-            <td className="hole">{golfer.get('fourteen_score')}</td>
-            <td className="hole">{golfer.get('fifteen_score')}</td>
-            <td className="hole">{golfer.get('sixteen_score')}</td>
-            <td className="hole">{golfer.get('seventeen_score')}</td>
-            <td className="hole">{golfer.get('eighteen_score')}</td>
-
-            <td className="totals">{golfer.get('back_score')}</td>
-            <td className="totals">{golfer.get('total_score')}</td>
-            <td className="hole">{golfer.get('total_par')}</td>
+            <th className="leadernames">PLAYER</th>
+            <th className="leaderdetails">SCORE TO PAR</th>
+            <th className="leaderdetails">HOLES PLAYED</th>
           </tr>
-        )}
 
-        </tbody>
-        </table>
+          {this.getLeaderboardScores().map(golfer =>
+            <tr>
+              <td className="leadernames">{golfer.get('name')}</td>
+              <td className="leaderdetails">{golfer.get('holes_finished')}</td>
+              <td className="leaderdetails">{golfer.get('total_par')}</td>
+            </tr>
+          )}
+
+          </tbody>
+          </table>
       </div>
     </div>;
   }
@@ -88,3 +63,58 @@ export const LeaderboardContainer = connect(
   mapStateToProps,
   actionCreators
 )(Leaderboard);
+
+/*
+render: function() {
+  return <div>
+  <div className="scorecard leaderboard">
+    Leaders
+      <table>
+      <tbody>
+
+            <ScoreCardHeaderContainer lineType='holenumbers' />
+            <ScoreCardHeaderContainer lineType='blue' />
+            <ScoreCardHeaderContainer lineType='white' />
+            <ScoreCardHeaderContainer lineType='red' />
+            <ScoreCardHeaderContainer lineType='par' />
+
+
+      {this.getLeaderboardScores().map(golfer =>
+        <tr>
+          <td className="names">{golfer.get('name')}</td>
+
+          <td className="hole">{golfer.get('one_score')}</td>
+          <td className="hole">{golfer.get('two_score')}</td>
+          <td className="hole">{golfer.get('three_score')}</td>
+          <td className="hole">{golfer.get('four_score')}</td>
+          <td className="hole">{golfer.get('five_score')}</td>
+          <td className="hole">{golfer.get('six_score')}</td>
+          <td className="hole">{golfer.get('seven_score')}</td>
+          <td className="hole">{golfer.get('eight_score')}</td>
+          <td className="hole">{golfer.get('nine_score')}</td>
+
+          <td className="totals">{golfer.get('front_score')}</td>
+
+          <td className="hole">{golfer.get('ten_score')}</td>
+          <td className="hole">{golfer.get('eleven_score')}</td>
+          <td className="hole">{golfer.get('twelve_score')}</td>
+          <td className="hole">{golfer.get('thirteen_score')}</td>
+          <td className="hole">{golfer.get('fourteen_score')}</td>
+          <td className="hole">{golfer.get('fifteen_score')}</td>
+          <td className="hole">{golfer.get('sixteen_score')}</td>
+          <td className="hole">{golfer.get('seventeen_score')}</td>
+          <td className="hole">{golfer.get('eighteen_score')}</td>
+
+          <td className="totals">{golfer.get('back_score')}</td>
+          <td className="totals">{golfer.get('total_score')}</td>
+          <td className="hole">{golfer.get('total_par')}</td>
+        </tr>
+      )}
+
+      </tbody>
+      </table>
+    </div>
+  </div>;
+}
+}
+*/
