@@ -10,8 +10,25 @@ body {
   min-height: 75px;
 }
 
+.topbar {
+  position: fixed;
+  width: 90%;
+  height: 25px;
+}
+
+.registration {
+  position: relative;
+  float: left;
+}
+
+.currentround {
+  position: relative;
+  float: right;
+}
+
 .hometabs {
   position: relative;
+  top: 25px;
   width: 100%;
   padding-left: 4%;
   padding-right: 4%;
@@ -132,9 +149,208 @@ body {
 
 
 
-.scorecard {
+
+.scoringheader {
+  position: relative;
+  width: 100%;
+}
+
+.addgolfers {
   position: relative;
   float: left;
+  width: 600px;
+}
+
+.addgolfersdropdown {
+    background-color: #444;
+    color: #7BC;
+    border: 1px solid #78C;
+    font-size: 12pt;
+}
+
+.playingfrontorback {
+  position: relative;
+  float: right;
+  width: 200px;
+}
+
+.frontorbackdropdown {
+  background-color: #444;
+  color: #7BC;
+  border: 1px solid #78C;
+  height: 30px;
+  font-size: 16pt;
+}
+
+
+
+.scoringmain {
+  position: relative;
+}
+
+.scoringviewpane {
+  position: fixed;
+  border: 1px solid red;
+  margin-top: 40px;
+  height: 100%;
+  width: 500px;
+  max-height: 600px;
+  min-width: 500px;
+  left: 50%;
+  margin-left: -250px;
+}
+
+.scoringhole {
+  position: relative;
+  float: left;
+  top: 0px;
+  height: 600px;
+  width: 500px;
+
+}
+
+.scoringhole table {
+  height: 100%;
+  width: 100%;
+}
+
+.holenumber {
+  height: 40px;
+  font-size: 24pt;
+  border-bottom: 2px solid white;
+}
+
+.holepicture {
+  text-align: center;
+  width: 250px;
+  height: 300px;
+}
+
+.holepar {
+  font-size: 20pt;
+}
+
+.holehandicap {
+  font-size: 16pt;
+}
+
+.holedistances {
+
+}
+
+.holedistances ul {
+  list-style: none;
+}
+
+.holedistances li {
+  height: 40px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.holedistances .blue {
+  background-color: #00D;
+  font-size: 16pt;
+  font-weight: bold;
+  color: white;
+}
+
+.holedistances .white {
+  background-color: white;
+  font-size: 16pt;
+  font-weight: bold;
+  color: black;
+}
+
+.holedistances .red {
+  background-color: #D00;
+  font-size: 16pt;
+  font-weight: bold;
+  color: black;
+}
+
+
+.scoringhole .golfers {
+  height: 180px;
+}
+
+.scoringhole ul {
+  height: 100%;
+  list-style: none;
+}
+
+.scoringhole li {
+  height: 50px;
+}
+
+.scoringhole .removegolfer {
+  background-color: transparent;
+  color: red;
+  border: 1px solid red;
+  margin-right: 25px;
+}
+
+.scoringhole .golfername {
+  position: relative;
+  float: left;
+  padding-top: 10px;
+}
+
+.singlescorebox {
+  position: relative;
+  float: right;
+  margin-right: 75px;
+  height: 80%;
+  width: 40px;
+  text-align: center;
+  color: #3F974C;
+  font-size: 24pt;
+
+  background-color: transparent;
+  border: 1px solid #3F974C;
+}
+
+.golfertotal {
+  position: relative;
+  float: right;
+  font-size: 20pt;
+  padding-top: 10px;
+  margin-right: 20px;
+
+}
+
+
+.navigation {
+  height: 30px;
+  color: #DDD;
+  text-align: center;
+}
+
+.holenavigation {
+  background-color: transparent;
+  border: 1px solid #7BC;
+  color: #7BC;
+  font-size: 12pt;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.scorecard {
+  position: relative;
   width: 100%;
   overflow: auto;
 }

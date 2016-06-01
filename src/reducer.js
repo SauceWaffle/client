@@ -20,6 +20,14 @@ function setActivePane(state, pane) {
   return state.set('currentPane', pane);
 }
 
+function setFrontOrBack(state, frontorback) {
+  return state.set('playingfrontorback', frontorback);
+}
+
+function setCurrentHole(state, hole) {
+  return state.set('mycurrenthole', hole);
+}
+
 
 
 
@@ -88,6 +96,10 @@ export default function(state = Map(), action) {
     return setCurrentGolfer(state, action.golfer_id);
   case 'SET_ACTIVE_PANE':
     return setActivePane(state, action.pane);
+  case 'SET_FRONT_OR_BACK':
+    return setFrontOrBack(state, action.frontorback);
+  case 'SET_CURRENT_HOLE':
+    return setCurrentHole(state, action.hole);
   case 'GET_MY_VOTES':
     return getMyVotes(state, action.state.vote.votes);
   case 'VOTE':

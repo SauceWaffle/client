@@ -5,6 +5,7 @@ import * as actionCreators from '../action_creators';
 
 import {MessageBoardContainer} from './messageboard';
 import {ScoreCardContainer} from './scorecard';
+import {ScoringContainer} from './livescoring';
 import {LeaderboardContainer} from './leaderboard';
 
 
@@ -37,6 +38,14 @@ export const Home = React.createClass({
               </div>
       }
   },
+  curRound: function() {
+      if (this.props.round_id) {
+        return <div>Week Of: {this.props.round_id}</div>
+      }
+      else {
+        return ""
+      }
+  },
   isActiveTab: function(tab) {
     if (this.props.currentPane && tab === this.props.currentPane){
       return "tab selected";
@@ -52,7 +61,11 @@ export const Home = React.createClass({
   render: function() {
     return <div className="homescreen">
         <div className="homeheader">
-          <div>{this.isRegistered()}</div>
+          <div className="topbar">
+            <div className="registration">{this.isRegistered()}</div>
+            <div className="currentround">{this.curRound()}</div>
+          </div>
+
 
           <div className="hometabs">
             <button className={this.isActiveTab("score")} ref="scoretab" onClick={() => {this.props.setActivePane("score") }}>SCORE CARD</button>
@@ -65,7 +78,7 @@ export const Home = React.createClass({
         <div className="viewpane">
 
           <div className={this.isActivePane("score")}>
-            <ScoreCardContainer />
+            <ScoringContainer />
           </div>
 
           <div className={this.isActivePane("leader")}>

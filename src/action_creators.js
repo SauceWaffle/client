@@ -34,6 +34,20 @@ export function setActivePane(pane) {
   }
 }
 
+export function setFrontOrBack(frontorback) {
+  return {
+    type: 'SET_FRONT_OR_BACK',
+    frontorback
+  }
+}
+
+export function setCurrentHole(hole) {
+  return {
+    type: 'SET_CURRENT_HOLE',
+    hole
+  }
+}
+
 
 
 
@@ -66,6 +80,34 @@ export function registerTo(client_id, golfer_id) {
     golfer_id
   };
 }
+
+
+
+
+
+
+
+export function addToMyGolfers(client_id, golfer_id) {
+  return {
+    meta: {remote: true},
+    type: 'SET_MY_GOLFERS',
+    client_id,
+    golfer_id
+  }
+}
+
+export function removeFromMyGolfers(client_id, golfer_id) {
+  return {
+    meta: {remote: true},
+    type: 'REMOVE_MY_GOLFERS',
+    client_id,
+    golfer_id
+  }
+}
+
+
+
+
 
 
 
