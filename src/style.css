@@ -1,7 +1,27 @@
+.globalContainer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+#app {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
 body {
   font-family: verdana;
   background-color: #333;
   color: black;
+  width: 200px;
+  overflow: auto;
 }
 
 
@@ -22,7 +42,7 @@ body {
 
 .homeheader {
   position: relative;
-  height: 175px;
+  height: 200px;
   min-height: 75px;
   border-bottom: 1px solid white;
 }
@@ -31,17 +51,18 @@ body {
   position: relative;
   width: 100%;
   height: 25px;
-  font-size: 20pt;
+  font-size: 28pt;
 }
 
 .registration {
   position: relative;
   float: left;
+  font-size: 40pt;
 }
 
 .registrationdropdown {
   background-color: #EDC;
-  font-size: 20pt;
+  font-size: 32pt;
 }
 
 
@@ -65,11 +86,11 @@ body {
   float: left;
   top: 0px;
   width: 30%;
-  height: 100px;
+  height: 120px;
   background-color: #8DF;
   border: none;
   margin: 0px 2px 0px 2px;
-  font-size: 28pt;
+  font-size: 32pt;
   font-weight: 600;
 }
 
@@ -137,7 +158,9 @@ body {
 .messageboard {
   position: relative;
   width: 100%;
+  height: 900px;
   margin: 10px 0px 20px 0px;
+  overflow-y: auto;
 }
 
 
@@ -154,21 +177,21 @@ body {
 .messageheader {
   padding-left: 5px;
   padding-right: 5px;
-  font-size: 18pt;
+  font-size: 32pt;
 }
 
 
 .messagedate {
   padding-left: 5px;
   padding-right: 5px;
-  font-size: 10pt;
+  font-size: 18pt;
 }
 
 
 .messagetext {
   padding-left: 5px;
   padding-right: 5px;
-  font-size: 16pt;
+  font-size: 28pt;
 }
 
 .newmessage {
@@ -178,9 +201,9 @@ body {
 .newmessagetext {
   background-color: transparent;
   border: 2px solid black;
-  height: 35px;
-  width: 750px;
-  font-size: 14pt;
+  height: 120px;
+  width: 700px;
+  font-size: 32pt;
 }
 
 .newmessagetext::-webkit-input-placeholder {
@@ -204,13 +227,16 @@ body {
 }
 
 .newmessagebutton {
-  height: 35px;
-  width: 80px;
+  height: 130px;
+  width: 125px;
   margin-left: 4px;
   background-color: #EDC;
   border: 1px solid #DCB;
-  font-size: 16pt;
+  font-size: 28pt;
 }
+
+
+
 
 
 
@@ -222,51 +248,49 @@ body {
 .scoringheader {
   position: relative;
   width: 100%;
+  height: 54px;
+  font-size: 26pt;
 }
 
 .addgolfers {
   position: relative;
   float: left;
-  width: 600px;
 }
 
 .addgolfersdropdown {
     background-color: #444;
     color: #7BC;
     border: 1px solid #78C;
-    font-size: 12pt;
+    font-size: 26pt;
 }
 
 .playingfrontorback {
   position: relative;
   float: right;
-  width: 200px;
+  width: 300px;
+  font-size: 26pt;
 }
 
 .frontorbackdropdown {
+  float: right;
   background-color: #444;
   color: #7BC;
   border: 1px solid #78C;
-  height: 30px;
-  font-size: 16pt;
+  height: 50px;
+  font-size: 28pt;
 }
 
 
 
 .scoringmain {
   position: relative;
-}
-
-.scoringviewpane {
-  position: fixed;
-  border: 1px solid red;
+  float: left;
   margin-top: 40px;
-  height: 100%;
-  width: 500px;
-  max-height: 600px;
-  min-width: 500px;
+  height: 1000px;
+  width: 800px;
   left: 50%;
-  margin-left: -250px;
+  margin-left: -400px;
+
 }
 
 .scoringhole {
@@ -279,28 +303,38 @@ body {
 }
 
 .scoringhole table {
+  border-collapse: collapse;
   height: 100%;
   width: 100%;
 }
 
 .holenumber {
-  height: 40px;
-  font-size: 24pt;
-  border-bottom: 2px solid white;
+  position: relative;
+  float: left;
+  top: 0px;
+  left: 0px;
+  height: 400px;
+  width: 400px;
+  vertical-align: top;
+  text-align: left;
+  font-size: 72pt;
 }
 
 .holepicture {
+  position: absolute;
+  top: 0px;
+  left: 0px;
   text-align: center;
-  width: 250px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
 }
 
 .holepar {
-  font-size: 20pt;
+  font-size: 40pt;
 }
 
 .holehandicap {
-  font-size: 16pt;
+  font-size: 32pt;
 }
 
 .holedistances {
@@ -312,96 +346,127 @@ body {
 }
 
 .holedistances li {
-  height: 40px;
+  height: 75px;
+  width: 250px;
   padding-top: 10px;
   text-align: center;
+  font-size: 36pt;
+  font-weight: bold;
 }
 
 .holedistances .blue {
   background-color: #00D;
-  font-size: 16pt;
-  font-weight: bold;
   color: white;
 }
 
 .holedistances .white {
   background-color: white;
-  font-size: 16pt;
-  font-weight: bold;
   color: black;
 }
 
 .holedistances .red {
   background-color: #D00;
-  font-size: 16pt;
-  font-weight: bold;
   color: black;
 }
 
 
 .scoringhole .golfers {
-  height: 180px;
+  height: 400px;
 }
 
-.scoringhole ul {
+.golfers ul {
   height: 100%;
   list-style: none;
+  padding-left: 0;
 }
 
-.scoringhole li {
-  height: 50px;
+.golfers li {
+  width: 750px;
+  height: 100px;
+  margin-left: 10px;
 }
 
 .scoringhole .removegolfer {
   background-color: transparent;
   color: red;
   border: 1px solid red;
-  margin-right: 25px;
+  margin-right: 20px;
+  font-size: 48pt;
 }
 
 .scoringhole .golfername {
   position: relative;
   float: left;
-  padding-top: 10px;
+  font-size: 38pt;
+  width: 500px;
 }
 
 .singlescorebox {
   position: relative;
   float: right;
-  margin-right: 75px;
-  height: 80%;
-  width: 40px;
+  margin-right: 20px;
+  height: 95px;
+  width: 80px;
   text-align: center;
   color: #3F974C;
-  font-size: 24pt;
+  font-size: 46pt;
 
   background-color: transparent;
-  border: 1px solid #3F974C;
+  border: 3px solid #3F974C;
+}
+
+.singlescorebox::-webkit-input-placeholder {
+   color: #3F974C;
+}
+
+.singlescorebox:focus::-webkit-input-placeholder {
+   color: transparent;
+}
+
+.singlescorebox:-moz-placeholder {  /* Firefox 19+ */
+   color: #3F974C;
+}
+
+.singlescorebox::-moz-placeholder {  /* Firefox 19+ */
+   color: #3F974C;
+}
+
+.singlescorebox:-ms-input-placeholder {
+   color: #3F974C;
 }
 
 .golfertotal {
   position: relative;
   float: right;
-  font-size: 20pt;
-  padding-top: 10px;
-  margin-right: 20px;
-
+  margin-right: 10px;
+  height: 88px;
+  width: 90px;
+  font-size: 48pt;
+  text-align: center;
+  padding-top: 12px;
 }
 
 
 .navigation {
-  height: 30px;
+  height: 100px;
   color: #DDD;
   text-align: center;
+  font-size: 40pt;
 }
 
 .holenavigation {
-  background-color: transparent;
+  background-color: #EDC;
   border: 1px solid #7BC;
   color: #7BC;
-  font-size: 12pt;
-  margin-left: 20px;
-  margin-right: 20px;
+  font-size: 40pt;
+}
+
+.next {
+  margin-left: 40px;
+}
+
+.prev {
+  margin-right: 40px;
 }
 
 
@@ -420,7 +485,7 @@ body {
 
 .scorecard {
   position: relative;
-  width: 100%;
+  width: 1200px;
   overflow: auto;
 }
 
@@ -471,6 +536,7 @@ body {
   width: 800px;
   left: 50%;
   margin-left: -400px;
+  overflow-y: auto;
 }
 
 .leaderboard table {
@@ -482,7 +548,7 @@ body {
   background-color: #EDC;
   text-align: center;
   border: 2px solid white;
-  font-size: 22pt;
+  font-size: 28pt;
 }
 
 .leaderboard tr:nth-child(even) {
@@ -492,11 +558,11 @@ body {
 .leaderboard td {
   text-align: center;
   border-top: 2px solid white;
-  font-size: 22pt;
+  font-size: 32pt;
 }
 
 .leadernames {
-  width: 150px;
+  width: 350px;
 }
 
 .leaderdetails {
@@ -511,13 +577,15 @@ body {
 
 
 
-
+.management {
+  overflow: auto;
+  color: white;
+}
 
 .management table {
   position: relative;
-  width: 100%;
+  width: 1200px;
   border-collapse: collapse;
-
 }
 
 .managegolfers th {

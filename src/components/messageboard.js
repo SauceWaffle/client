@@ -17,40 +17,42 @@ export const MessageBoard = React.createClass({
   },
   render: function() {
     return <div>
-      <div className="messageboard">
 
 
-        {this.getMessages().map(message =>
-          <div className="message" key={message.get('_id')} >
-            <div className="messagelineone">
-              <span className="messageheader" style={{color: message.get('message_color')}} >{message.get('golfer_name')}</span>
-              <span className="messagedate" style={{color: message.get('message_color')}}   >{message.get('created')}</span>
-            </div>
-            <div className="messagelinetwo">
-              <span className="messagetext"   >{message.get('message')}</span>
-            </div>
-          </div>
-        )}
+        <div className="messageboard">
 
+            {this.getMessages().map(message =>
+              <div className="message" key={message.get('_id')} >
+                <div className="messagelineone">
+                  <span className="messageheader" style={{color: message.get('message_color')}} >{message.get('golfer_name')}</span>
+                  <span className="messagedate" style={{color: message.get('message_color')}}   >{message.get('created')}</span>
+                </div>
+                <div className="messagelinetwo">
+                  <span className="messagetext"   >{message.get('message')}</span>
+                </div>
+              </div>
+            )}
+
+        </div>
 
         <div className="newmessage">
 
-          <form onSubmit={e => {
-              e.preventDefault()
-              if (!this.refs.txtAddMessage.value.trim()) {
-                return
-              }
-              this.props.sendNewMessage(this.props.round_id, this.props.whoAmI_id, this.refs.txtAddMessage.value)
-              this.refs.txtAddMessage.value = ''
-          }}>
+            <form onSubmit={e => {
+                e.preventDefault()
+                if (!this.refs.txtAddMessage.value.trim()) {
+                  return
+                }
+                this.props.sendNewMessage(this.props.round_id, this.props.whoAmI_id, this.refs.txtAddMessage.value)
+                this.refs.txtAddMessage.value = ''
+            }}>
 
-          <input className="newmessagetext" ref="txtAddMessage" placeholder="Say Something..." />
-          <button className="newmessagebutton" type="submit" >Send</button>
+              <input className="newmessagetext" ref="txtAddMessage" placeholder="Say Something..." />
+              <button className="newmessagebutton" type="submit" >Send</button>
 
-        </form>
+            </form>
 
-      </div>
-      </div>
+        </div>
+      
     </div>;
   }
 });

@@ -26,7 +26,7 @@ export const Leaderboard = React.createClass({
 
           <tr>
             <th className="leadernames">PLAYER</th>
-            <th className="leaderdetails">HOLES PLAYED</th>
+            <th className="leaderdetails">HOLES</th>
             <th className="leaderdetails">SCORE</th>
           </tr>
 

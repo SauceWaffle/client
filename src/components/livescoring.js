@@ -29,13 +29,36 @@ export const Scoring = React.createClass({
     if (round && golfer && whatToGet) {
       var whatever;
       whatever = round.find(val => val.get('_id') === golfer.get('_id'));
+
+      switch ( whatToGet.substring(0, whatToGet.indexOf("_")) ) {
+        case "1": whatToGet = "one"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        case "2": whatToGet = "two"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        case "3": whatToGet = "three"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        case "4": whatToGet = "four"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        case "5": whatToGet = "five"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        case "6": whatToGet = "six"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        case "7": whatToGet = "seven"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        case "8": whatToGet = "eight"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        case "9": whatToGet = "nine"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        case "10": whatToGet = "ten"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        case "11": whatToGet = "eleven"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        case "12": whatToGet = "twelve"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        case "13": whatToGet = "thirteen"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        case "14": whatToGet = "fourteen"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        case "15": whatToGet = "fifteen"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        case "16": whatToGet = "sixteen"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        case "17": whatToGet = "seventeen"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        case "18": whatToGet = "eighteen"+whatToGet.substring(whatToGet.indexOf("_")); break;
+        default: whatToGet;
+      }
+
       return (whatever) ? whatever.get(whatToGet) : "";
     }
     else { return "" }
   },
   addMoreGolfers: function() {
     if (this.props.golfers_free && this.props.whoAmI_id && (!this.props.my_golfers || this.props.my_golfers.count() < 4) ) {
-      return <div className="addgolfers">Add Golfer For Scoring:
+      return <div className="addgolfers">Add Golfer:
             <select onChange={() => this.props.addToMyGolfers(this.props.client_id,
                                                           this.refs.addMoreGolfersDropdown.value)}
                     ref="addMoreGolfersDropdown" value=""
@@ -53,9 +76,7 @@ export const Scoring = React.createClass({
         </div>
     }
     else if (this.props.golfers_free && this.props.whoAmI_id && this.props.my_golfers && this.props.my_golfers.count() == 4 )  {
-      return <div>Add Golfer For Scoring:
-              <div>Already Have a Foursome</div>
-            </div>
+      return <div></div>
     }
     else { return "" }
   },
@@ -121,7 +142,6 @@ export const Scoring = React.createClass({
 
         <div className="scoringmain">
 
-            <div className="scoringviewpane">
 
                 <div ref="scoringMainArea">
                   {this.getCurrentHole().map(hole =>
@@ -134,16 +154,9 @@ export const Scoring = React.createClass({
                         <tbody>
 
                         <tr>
-                          <td className="holenumber" colSpan="2">
-                            <div>{hole.get('number')}</div>
-                          </td>
-                          <td>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td className="holepicture" rowSpan="2">
-                            <div>[picture here]</div>
+                          <td rowSpan="2" colSpan="2">
+                              <div className="holenumber">{hole.get('number')}</div>
+                              <div className="holepicture"><img src={"./images/"+hole.get('number')+".png"} /></div>
                           </td>
                           <td>
                             <div className="holepar">Par {hole.get('par')}</div>
@@ -162,35 +175,35 @@ export const Scoring = React.createClass({
                         </tr>
 
                         <tr>
-                        <td className="golfers" colSpan="2">
+                          <td className="golfers" colSpan="3">
 
-                          <ul className="golfers">
-                          {this.getGolfersForScoring().map(golfer =>
-                              <li>
+                            <ul className="golfers">
+                            {this.getGolfersForScoring().map(golfer =>
+                                <li>
 
-                                <div className="golfername">
-                                  <button className="removegolfer"
-                                        onClick={() => this.props.removeFromMyGolfers(this.props.client_id, golfer.get('_id'))}
-                                    >X</button>
-                                  {golfer.get('name')}
-                                </div>
+                                  <div className="golfername">
+                                    <button className="removegolfer"
+                                          onClick={() => this.props.removeFromMyGolfers(this.props.client_id, golfer.get('_id'))}
+                                      >X</button>
+                                    {golfer.get('name')}
+                                  </div>
 
-                                <div className="golfertotal">{(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'total_score') : '' }</div>
+                                  <div className="golfertotal">{(this.props.round) ? this.getGolferScore(this.props.round, golfer, 'total_score') : '' }</div>
 
-                                <input type="text" ref={hole.get('_id') + "ScoreBox" + golfer.get('_id')} className="singlescorebox"
-                                    onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), hole.get('_id'), ele.currentTarget.value)}
-                                    placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, hole.get('_id')+'_score') : '' } />
+                                  <input type="number" ref={hole.get('_id') + "ScoreBox" + golfer.get('_id')} className="singlescorebox"
+                                      onChange={(ele) => this.props.sendGolferScore(this.props.client_id, this.props.round_id, golfer.get('_id'), hole.get('_id'), ele.currentTarget.value)}
+                                      placeholder={(this.props.round) ? this.getGolferScore(this.props.round, golfer, hole.get('_id')+'_score') : '' } />
 
 
-                              </li>
+                                </li>
 
-                          )}
-                          </ul>
-                        </td>
+                            )}
+                            </ul>
+                          </td>
                         </tr>
 
                         <tr>
-                        <td className="navigation" colSpan="2">
+                        <td className="navigation" colSpan="3">
                           {this.getNavigation(hole.get('number'))}
                         </td>
                         </tr>
@@ -202,7 +215,6 @@ export const Scoring = React.createClass({
                   )}
 
 
-                </div>
 
 
             </div>
