@@ -27,7 +27,7 @@ export const Leaderboard = React.createClass({
           <tr>
             <th className="leadernames">PLAYER</th>
             <th className="leaderdetails">HOLES PLAYED</th>
-            <th className="leaderdetails">SCORE TO PAR</th>
+            <th className="leaderdetails">SCORE</th>
           </tr>
 
           {this.getLeaderboardScores().map(golfer =>

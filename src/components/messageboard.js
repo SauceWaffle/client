@@ -45,7 +45,7 @@ export const MessageBoard = React.createClass({
           }}>
 
           <input className="newmessagetext" ref="txtAddMessage" placeholder="Say Something..." />
-          <button className="newmessagebutton" type="submit" >Add</button>
+          <button className="newmessagebutton" type="submit" >Send</button>
 
         </form>
 

@@ -1,25 +1,49 @@
 body {
   font-family: verdana;
   background-color: #333;
-  color: white;
+  color: black;
 }
+
+
+
+.homescreen {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  margin-left: -450px;
+  height: 1300px;
+  width: 900px;
+  background-color: #FED;
+  overflow: auto;
+}
+
+
+
 
 .homeheader {
   position: relative;
-  height: 10%;
+  height: 175px;
   min-height: 75px;
+  border-bottom: 1px solid white;
 }
 
 .topbar {
-  position: fixed;
-  width: 90%;
+  position: relative;
+  width: 100%;
   height: 25px;
+  font-size: 20pt;
 }
 
 .registration {
   position: relative;
   float: left;
 }
+
+.registrationdropdown {
+  background-color: #EDC;
+  font-size: 20pt;
+}
+
 
 .currentround {
   position: relative;
@@ -28,10 +52,12 @@ body {
 
 .hometabs {
   position: relative;
-  top: 25px;
+  float: left;
+  top: 10px;
+  left: 2%;
   width: 100%;
-  padding-left: 4%;
-  padding-right: 4%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 .hometabs .tab {
@@ -39,10 +65,12 @@ body {
   float: left;
   top: 0px;
   width: 30%;
-  height: 40px;
+  height: 100px;
   background-color: #8DF;
   border: none;
   margin: 0px 2px 0px 2px;
+  font-size: 28pt;
+  font-weight: 600;
 }
 
 .hometabs .selected {
@@ -107,9 +135,9 @@ body {
 
 
 .messageboard {
-  min-width: 600px;
+  position: relative;
+  width: 100%;
   margin: 10px 0px 20px 0px;
-  overflow: auto;
 }
 
 
@@ -126,23 +154,64 @@ body {
 .messageheader {
   padding-left: 5px;
   padding-right: 5px;
-  font-size: 12pt;
+  font-size: 18pt;
 }
 
 
 .messagedate {
   padding-left: 5px;
   padding-right: 5px;
-  font-size: 8pt;
+  font-size: 10pt;
 }
 
 
 .messagetext {
   padding-left: 5px;
   padding-right: 5px;
-  font-size: 10pt;
-  color: #DDD;
+  font-size: 16pt;
 }
+
+.newmessage {
+  margin-top: 5px;
+}
+
+.newmessagetext {
+  background-color: transparent;
+  border: 2px solid black;
+  height: 35px;
+  width: 750px;
+  font-size: 14pt;
+}
+
+.newmessagetext::-webkit-input-placeholder {
+   color: #222;
+}
+
+.newmessagetext:focus::-webkit-input-placeholder {
+   color: transparent;
+}
+
+.newmessagetext:-moz-placeholder {  /* Firefox 19+ */
+   color: #222;
+}
+
+.newmessagetext::-moz-placeholder {  /* Firefox 19+ */
+   color: #222;
+}
+
+.newmessagetext:-ms-input-placeholder {
+   color: #222;
+}
+
+.newmessagebutton {
+  height: 35px;
+  width: 80px;
+  margin-left: 4px;
+  background-color: #EDC;
+  border: 1px solid #DCB;
+  font-size: 16pt;
+}
+
 
 
 
@@ -397,24 +466,33 @@ body {
 
 
 .leaderboard {
-  position: fixed;
+  position: relative;
+  margin-top: 15px;
+  width: 800px;
   left: 50%;
-  margin-left: -175px;
+  margin-left: -400px;
 }
 
 .leaderboard table {
-  width: 350px;
+  width: 100%;
   border-collapse: collapse;
 }
 
 .leaderboard th {
+  background-color: #EDC;
   text-align: center;
   border: 2px solid white;
+  font-size: 22pt;
+}
+
+.leaderboard tr:nth-child(even) {
+  background-color: #FFF4E1;
 }
 
 .leaderboard td {
   text-align: center;
-  border: 2px solid white;
+  border-top: 2px solid white;
+  font-size: 22pt;
 }
 
 .leadernames {

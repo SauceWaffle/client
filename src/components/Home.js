@@ -23,7 +23,8 @@ export const Home = React.createClass({
         return <div>Register to:
               <select onChange={() => this.props.registerTo(this.props.client_id,
                                                             this.refs.registerDropdown.value)}
-                      ref="registerDropdown" value="" >
+                      ref="registerDropdown" value=""
+                      className="registrationdropdown" >
 
                 <option value=""></option>
                 {this.getAllGolfers().map(golfer =>
