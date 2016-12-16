@@ -16,7 +16,7 @@ import {Map} from 'immutable';
 
 require('./style.css');
 
-const socket = io(`${location.protocol}//${location.hostname}:8000`);
+const socket = io(`${location.protocol}//${location.hostname}:8000`, {secure: true});
 socket.on('state', state =>
   store.dispatch(setState(state))
 );
